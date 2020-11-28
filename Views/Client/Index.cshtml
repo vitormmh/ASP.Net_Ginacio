@@ -1,0 +1,33 @@
+﻿del List<WebComplete.Models.Client>
+    @{
+        ViewBag.Title = "Home Page";
+    }
+
+    <div class="jumbotron">
+        <h1>Clientes</h1>
+
+    </div>
+
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Plano</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Mail</td>
+                    <td>@item.Plan.Name</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+

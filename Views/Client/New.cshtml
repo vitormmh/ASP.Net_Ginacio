@@ -1,0 +1,39 @@
+﻿@model WebComplete.Models.Client
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Novo Utilizador</h2>
+
+@using (Html.BeginForm("Create", "Plan"))
+{
+    <div class=" form-group">
+
+        @Html.LabelFor(m =>m.Name)
+        @Html.TextBoxFor(m => m.Name, new {@class = "form-control" })
+    </div>
+    <div class=" form-group">
+
+        @Html.LabelFor(m => m.Mail)
+        @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+    </div>
+    <div class=" form-group">
+
+        @Html.LabelFor(m => m.BirthDate)
+        @Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control" })
+    </div>
+    <div class=" form-group">
+
+        @Html.LabelFor(m => m.SubscribeDate)
+        @Html.TextBoxFor(m => m.SubscribeDate, new { @class = "form-control" })
+    </div>
+    <div class="checkbox">
+        <label>
+            
+            @Html.CheckBoxFor(m => m.IsSubscrivedToNews) Receber Noticias
+        </label>
+    </div>
+
+};
+
