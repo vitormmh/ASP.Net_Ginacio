@@ -1,4 +1,4 @@
-﻿@model WebComplete.Models.Client
+﻿@model WebComplete.Models.ViewModel.PlanUserViewModel
 @{
     ViewBag.Title = "New";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,30 +10,33 @@
 {
     <div class=" form-group">
 
-        @Html.LabelFor(m =>m.Name)
-        @Html.TextBoxFor(m => m.Name, new {@class = "form-control" })
+        @Html.LabelFor(m =>m.Utilizador.Name)
+        @Html.TextBoxFor(m => m.Utilizador.Name, new {@class = "form-control" })
     </div>
     <div class=" form-group">
 
-        @Html.LabelFor(m => m.Mail)
-        @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Utilizador.Mail)
+        @Html.TextBoxFor(m => m.Utilizador.Mail, new { @class = "form-control" })
     </div>
     <div class=" form-group">
 
-        @Html.LabelFor(m => m.BirthDate)
-        @Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Utilizador.BirthDate)
+        @Html.TextBoxFor(m => m.Utilizador.BirthDate, new { @class = "form-control" })
     </div>
     <div class=" form-group">
 
-        @Html.LabelFor(m => m.SubscribeDate)
-        @Html.TextBoxFor(m => m.SubscribeDate, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Utilizador.SubscribeDate)
+        @Html.TextBoxFor(m => m.Utilizador.SubscribeDate, new { @class = "form-control" })
     </div>
     <div class="checkbox">
         <label>
-            
-            @Html.CheckBoxFor(m => m.IsSubscrivedToNews) Receber Noticias
+            @Html.CheckBoxFor(m => m.Utilizador.IsSubscrivedToNews) Receber Noticias
         </label>
+       
     </div>
-
+    <div class=" form-group">
+     
+        @Html.DropDownListFor(m => m.Utilizador.PlanID, new SelectList(Model.Planos,"Id","Name"), "Selecione Plano", new { @class = "form-control" })
+    </div>
 };
 

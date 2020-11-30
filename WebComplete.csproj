@@ -228,6 +228,10 @@
     <Compile Include="Migrations\202011280004380_ChangeFieldClient.Designer.cs">
       <DependentUpon>202011280004380_ChangeFieldClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011301514464_ChangeFieldsInClient.cs" />
+    <Compile Include="Migrations\202011301514464_ChangeFieldsInClient.Designer.cs">
+      <DependentUpon>202011301514464_ChangeFieldsInClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -345,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011280004380_ChangeFieldClient.resx">
       <DependentUpon>202011280004380_ChangeFieldClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011301514464_ChangeFieldsInClient.resx">
+      <DependentUpon>202011301514464_ChangeFieldsInClient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

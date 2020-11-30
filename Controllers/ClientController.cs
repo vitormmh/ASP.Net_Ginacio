@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebComplete.Models;
 using System.Data.Entity;
+using WebComplete.Models.ViewModel;
 
 namespace WebComplete.Controllers
 {
@@ -22,16 +23,25 @@ namespace WebComplete.Controllers
         public ActionResult Index()
         {
 
-            List<Client>Clientes = _context.Client.Include(c => c.Plan).ToList();
+            List<Client> Clientes = _context.Client.Include(c => c.Plan).ToList();
 
             return View(Clientes);
         }
 
         public ActionResult New()
         {
-            List<Plan> plans = new List<Plan>();
-            plans =_
-            return View();
+            List<Plan> Planox = new List<Plan>();
+
+            Planox = _context.Plan.ToList();
+
+            PlanUserViewModel viewModel = new PlanUserViewModel()
+            {
+                Planos = Planox,
+
+            };
+
+
+            return View(viewModel);
         }
     }
 }
